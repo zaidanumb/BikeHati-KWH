@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikeHati - Sewa Sepeda</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>BikeHati</h1>
+                <p>Sewa Sepeda Mudah</p>
+            </div>
+            
+            <nav class="categories">
+                <button class="category-btn active" data-category="bmx">
+                    <i class="fas fa-bicycle"></i>
+                    <span>BMX</span>
+                </button>
+                <button class="category-btn" data-category="sepedaGunung">
+                    <i class="fas fa-mountain"></i>
+                    <span>Sepeda Gunung</span>
+                </button>
+                <button class="category-btn" data-category="sepedaLipat">
+                    <i class="fas fa-compress"></i>
+                    <span>Sepeda Lipat</span>
+                </button>
+                <button class="category-btn" data-category="sepedaListrik">
+                    <i class="fas fa-bolt"></i>
+                    <span>Sepeda Listrik</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="contact-info">
+                    <p>Hubungi Kami</p>
+                    <p style="font-size: 0.9rem; color: #999;">+62 812 3456 7890</p>
+                </div>
+                <div class="project-credits">
+                    <p>Project made by</p>
+                    <p>Zaidan Arrasyid Suwondo (AF-10)</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h2 id="categoryTitle">BMX</h2>
+                <p id="categoryDesc">Sepeda BMX untuk trik dan performa maksimal</p>
+            </header>
+
+            <div class="bikes-container" id="bikesContainer">
+                <!-- Cards akan di-generate oleh JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="modal" id="detailModal">
+        <div class="modal-content modal-detail">
+            <button class="modal-close" id="closeDetailBtn">&times;</button>
+            
+            <div class="detail-image">
+                <img id="detailImage" src="" alt="Sepeda">
+            </div>
+
+            <div class="detail-info">
+                <h3 id="detailName"></h3>
+                <p id="detailBrand" class="brand"></p>
+                
+                <div class="detail-price">
+                    <span id="detailPricePerHour"></span>
+                    <p style="font-size: 0.9rem; color: #999; margin-top: 5px;">per jam</p>
+                </div>
+
+                <div class="detail-description">
+                    <h4>Deskripsi</h4>
+                    <p id="detailDesc"></p>
+                </div>
+
+                <div class="detail-outlets">
+                    <h4>Tersedia di Outlet</h4>
+                    <ul id="outletsList"></ul>
+                </div>
+
+                <button class="btn-sewa" id="btnSewaSekarang">Sewa Sekarang</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rental Form Modal -->
+    <div class="modal" id="rentalModal">
+        <div class="modal-content modal-rental">
+            <button class="modal-close" id="closeRentalBtn">&times;</button>
+            
+            <h3>Formulir Penyewaan</h3>
+
+            <div class="error-notification" id="errorNotification">
+                <i class="fas fa-exclamation-circle"></i>
+                <p id="errorMessage"></p>
+            </div>
+
+            <form id="rentalForm">
+                <div class="form-group">
+                    <label for="outletSelect">Pilih Outlet</label>
+                    <select id="outletSelect" required>
+                        <option value="">-- Pilih Outlet --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerName">Nama Lengkap</label>
+                    <input type="text" id="customerName" placeholder="Masukkan nama anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rentalDuration">Durasi Sewa (Jam)</label>
+                    <div class="duration-input">
+                        <button type="button" class="duration-btn" id="minusBtn">−</button>
+                        <input type="number" id="rentalDuration" value="1" min="1" max="24" required>
+                        <button type="button" class="duration-btn" id="plusBtn">+</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Metode Pembayaran</label>
+                    <div class="payment-methods">
+                        <button type="button" class="payment-btn" data-payment="qris">
+                            <img src="paymentMethod/qris.png" alt="QRIS">
+                            <span>QRIS</span>
+                        </button>
+                        <button type="button" class="payment-btn" data-payment="gopay">
+                            <img src="paymentMethod/gopay.png" alt="GoPay">
+                            <span>GoPay</span>
+                        </button>
+                        <button type="button" class="payment-btn" data-payment="dana">
+                            <img src="paymentMethod/dana.png" alt="DANA">
+                            <span>DANA</span>
+                        </button>
+                        <button type="button" class="payment-btn" data-payment="ovo">
+                            <img src="paymentMethod/ovo.png" alt="OVO">
+                            <span>OVO</span>
+                        </button>
+                        <button type="button" class="payment-btn" data-payment="tunai">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Tunai</span>
+                        </button>
+                    </div>
+                    <input type="hidden" id="selectedPayment" required>
+                </div>
+
+                <div class="price-summary">
+                    <div class="price-row">
+                        <span>Harga Per Jam:</span>
+                        <span id="pricePerHourSummary">-</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Durasi Sewa:</span>
+                        <span id="durationSummary">1 jam</span>
+                    </div>
+                    <div class="price-row total">
+                        <span>Total Harga:</span>
+                        <span id="totalPrice">-</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-bayar">Bayar & Sewa</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <p>Pembayaran Berhasil, Silahkan datang ke Outlet dan Selamat Bersenang-Senang!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
