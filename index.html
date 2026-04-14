@@ -35,6 +35,16 @@
                 </button>
             </nav>
 
+            <div class="history-section">
+                <button class="history-btn" id="historyBtn">
+                    <i class="fas fa-history"></i>
+                    <span>Riwayat Sewa</span>
+                </button>
+                <div class="history-list" id="historyList">
+                    <p class="history-empty">Belum ada riwayat sewa</p>
+                </div>
+            </div>
+
             <div class="sidebar-footer">
                 <div class="contact-info">
                     <p>Hubungi Kami</p>
@@ -89,6 +99,49 @@
                 </div>
 
                 <button class="btn-sewa" id="btnSewaSekarang">Sewa Sekarang</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Detail Modal -->
+    <div class="modal" id="historyDetailModal">
+        <div class="modal-content modal-detail">
+            <button class="modal-close" id="closeHistoryDetailBtn">&times;</button>
+            
+            <div class="detail-image">
+                <img id="historyDetailImage" src="" alt="Sepeda">
+            </div>
+
+            <div class="detail-info">
+                <h3 id="historyDetailName"></h3>
+                <p id="historyDetailBrand" class="brand"></p>
+                
+                <div class="history-details">
+                    <div class="detail-row">
+                        <span class="label">Durasi Sewa:</span>
+                        <span id="historyDuration"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Metode Pembayaran:</span>
+                        <span id="historyPayment"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Outlet:</span>
+                        <span id="historyOutlet"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Nama Penyewa:</span>
+                        <span id="historyCustomer"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Waktu Sewa:</span>
+                        <span id="historyTimestamp"></span>
+                    </div>
+                    <div class="detail-row total-price">
+                        <span class="label">Total Harga:</span>
+                        <span id="historyTotalPrice"></span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

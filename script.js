@@ -8,7 +8,7 @@ const bikeData = {
             image: 'listSepeda/BMX/Pacific.png',
             pricePerHour: 50000,
             description: 'BMX sport dengan desain aerodinamis dan frame yang ringan. Cocok untuk pemula yang ingin belajar trick dan melakukan akselerasi tinggi.',
-            outlets: ['Kelapa Gading', 'Taman Kota', 'Pusat Olahraga']
+            outlets: ['Kelapa Gading', 'Menteng', 'Tebet']
         },
         {
             id: 2,
@@ -17,7 +17,7 @@ const bikeData = {
             image: 'listSepeda/BMX/United.png',
             pricePerHour: 55000,
             description: 'BMX profesional dengan wheelset yang responsif dan pedal anti slip. Dirancang untuk performa maksimal dalam kompetisi.',
-            outlets: ['Kelapa Gading', 'Taman Sentral', 'Stadiun']
+            outlets: ['Kelapa Gading', 'Cikini', 'Kramat Jati']
         },
         {
             id: 3,
@@ -26,7 +26,7 @@ const bikeData = {
             image: 'listSepeda/BMX/Wimcycle.png',
             pricePerHour: 60000,
             description: 'BMX elite dengan material chromoly dan finishing premium. Performa terbaik untuk rider profesional dan trick ekstrem.',
-            outlets: ['Kelapa Gading', 'Taman Kota', 'Pusat Olahraga', 'Stadiun']
+            outlets: ['Kelapa Gading', 'Menteng', 'Tebet', 'Kramat Jati']
         }
     ],
     sepedaGunung: [
@@ -37,7 +37,7 @@ const bikeData = {
             image: 'listSepeda/sepedaGunung/Polygon.png',
             pricePerHour: 75000,
             description: 'Sepeda gunung dengan suspensi depan yang handal dan traksi tinggi. Ideal untuk trail menengah dan pemandangan alam yang menakjubkan.',
-            outlets: ['Gunung Indah', 'Taman Alam', 'Pusat Petualangan']
+            outlets: ['Bogor Pusat', 'Puncak', 'Cisarua']
         },
         {
             id: 5,
@@ -55,7 +55,7 @@ const bikeData = {
             image: 'listSepeda/sepedaGunung/Wimcycle.png',
             pricePerHour: 85000,
             description: 'Sepeda gunung premium dengan teknologi suspension terdepan dan frame yang tangguh. Untuk petualangan ekstrem dan downhill profesional.',
-            outlets: ['Gunung Indah', 'Taman Alam', 'Pusat Petualangan', 'Hutan Lindung']
+            outlets: ['Bogor Pusat', 'Puncak', 'Cisarua', 'Sukaraja']
         }
     ],
     sepedaLipat: [
@@ -66,7 +66,7 @@ const bikeData = {
             image: 'listSepeda/sepedaLipat/Element.png',
             pricePerHour: 40000,
             description: 'Sepeda lipat ultra compact yang mudah dibawa dan disimpan. Cocok untuk urban commuting dan perjalanan dengan transportasi publik.',
-            outlets: ['Pusat Kota', 'Terminal', 'Mall Central']
+            outlets: ['Gambir', 'Blok M', 'Manggarai']
         },
         {
             id: 8,
@@ -84,7 +84,7 @@ const bikeData = {
             image: 'listSepeda/sepedaLipat/United.png',
             pricePerHour: 48000,
             description: 'Sepeda lipat dengan desain modern dan kenyamanan maksimal. Ideal untuk commuter yang menginginkan portabilitas dan style.',
-            outlets: ['Pusat Kota', 'Terminal', 'Mall Central', 'Stasiun']
+            outlets: ['Gambir', 'Blok M', 'Manggarai', 'Bekasi Pusat']
         }
     ],
     sepedaListrik: [
@@ -99,11 +99,11 @@ const bikeData = {
         },
         {
             id: 11,
-            name: 'Selis E-Cruiser',
+            name: 'Selis Murai',
             brand: 'Selis',
             image: 'listSepeda/sepedaListrik/Selis.png',
             pricePerHour: 110000,
-            description: 'E-bike cruiser yang nyaman dan powerful dengan teknologi regenerative braking. Rasakan kenyamanan maksimal setiap perjalanan.',
+            description: 'Sepeda listrik premium dengan desain yang stylish dan kapasitas besar. Dilengkapi keranjang untuk membawa barang dan baterai tahan lama hingga 80km. Sempurna untuk perjalanan jarak menengah dengan gaya dan kenyamanan maksimal.',
             outlets: ['Pusat Kota', 'Taman Modern', 'Kawasan Pantai']
         },
         {
@@ -113,29 +113,29 @@ const bikeData = {
             image: 'listSepeda/sepedaListrik/United.png',
             pricePerHour: 120000,
             description: 'Premium e-bike dengan motor mid-drive dan display LCD yang canggih. Pengalaman bergerak yang futuristik dan efisien.',
-            outlets: ['Pusat Kota', 'Kawasan Bisnis', 'Taman Modern', 'Kawasan Pantai']
+            outlets: ['Gambir', 'Senayan', 'Kemang', 'Penjaringan']
         }
     ]
 };
 
 // Outlet data untuk dropdown
 const allOutlets = {
-    'Kelapa Gading': 'Jl. Lodan Raya, Jakarta Utara',
-    'Taman Kota': 'Jl. Sudirman, Jakarta Pusat',
-    'Pusat Olahraga': 'Jl. Gatot Subroto, Jakarta Selatan',
-    'Taman Sentral': 'Jl. Thamrin, Jakarta Pusat',
-    'Stadiun': 'Jl. Iran Raya, Jakarta Timur',
-    'Gunung Indah': 'Jl. Bogor Raya, Bogor',
-    'Taman Alam': 'Jl. Puncak, Bogor',
-    'Pusat Petualangan': 'Jl. Alam Raya, Bogor',
-    'Hutan Lindung': 'Jl. Hutan, Bogor',
-    'Pusat Kota': 'Jl. Merdeka, Jakarta Pusat',
-    'Terminal': 'Jl. Kampung Rambutan, Jakarta',
-    'Mall Central': 'Jl. Sudirman, Jakarta Pusat',
-    'Stasiun': 'Jl. Stasiun, Jakarta',
-    'Kawasan Bisnis': 'Jl. Casablanca, Jakarta Selatan',
-    'Taman Modern': 'Jl. Kemang, Jakarta Selatan',
-    'Kawasan Pantai': 'Jl. Marina, Jakarta Utara'
+    'Kelapa Gading': 'Jakarta Utara',
+    'Menteng': 'Jakarta Pusat',
+    'Tebet': 'Jakarta Selatan',
+    'Cikini': 'Jakarta Pusat',
+    'Kramat Jati': 'Jakarta Timur',
+    'Bogor Pusat': 'Bogor',
+    'Puncak': 'Bogor',
+    'Cisarua': 'Bogor',
+    'Sukaraja': 'Bogor',
+    'Gambir': 'Jakarta Pusat',
+    'Bekasi Pusat': 'Bekasi',
+    'Senayan': 'Jakarta Selatan',
+    'Manggarai': 'Jakarta Pusat',
+    'Blok M': 'Jakarta Selatan',
+    'Kemang': 'Jakarta Selatan',
+    'Penjaringan': 'Jakarta Utara'
 };
 
 // State
@@ -151,8 +151,10 @@ const categoryDesc = document.getElementById('categoryDesc');
 
 const detailModal = document.getElementById('detailModal');
 const rentalModal = document.getElementById('rentalModal');
+const historyDetailModal = document.getElementById('historyDetailModal');
 const closeDetailBtn = document.getElementById('closeDetailBtn');
 const closeRentalBtn = document.getElementById('closeRentalBtn');
+const closeHistoryDetailBtn = document.getElementById('closeHistoryDetailBtn');
 
 const rentalForm = document.getElementById('rentalForm');
 const rentalDuration = document.getElementById('rentalDuration');
@@ -162,6 +164,9 @@ const outletSelect = document.getElementById('outletSelect');
 const paymentBtns = document.querySelectorAll('.payment-btn');
 const notification = document.getElementById('notification');
 
+const historyBtn = document.getElementById('historyBtn');
+const historyList = document.getElementById('historyList');
+
 const categoryDescriptions = {
     bmx: 'Sepeda BMX untuk trik dan performa maksimal',
     sepedaGunung: 'Sepeda gunung untuk penjelajahan alam liar',
@@ -169,10 +174,20 @@ const categoryDescriptions = {
     sepedaListrik: 'Sepeda listrik untuk perjalanan modern'
 };
 
+// Payment method labels
+const paymentLabels = {
+    qris: 'QRIS',
+    gopay: 'GoPay',
+    dana: 'DANA',
+    ovo: 'OVO',
+    tunai: 'Tunai'
+};
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     renderBikes();
     setupEventListeners();
+    loadHistoryFromStorage();
     populateOutlets();
 });
 
@@ -189,6 +204,10 @@ function setupEventListeners() {
     // Modal close buttons
     closeDetailBtn.addEventListener('click', closeDetail);
     closeRentalBtn.addEventListener('click', closeRental);
+    closeHistoryDetailBtn.addEventListener('click', closeHistoryDetail);
+
+    // History button
+    historyBtn.addEventListener('click', toggleHistoryList);
 
     // Sewa Sekarang button
     document.getElementById('btnSewaSekarang').addEventListener('click', openRental);
@@ -402,6 +421,15 @@ function handleFormSubmit(e) {
 
     // Close modal and show notification
     closeRental();
+    
+    // Get rental data and save to history
+    const duration = parseInt(rentalDuration.value);
+    const totalPrice = selectedBike.pricePerHour * duration;
+    const customerName = document.getElementById('customerName').value;
+    const outlet = outletSelect.value;
+
+    saveToHistory(selectedBike, duration, outlet, customerName, selectedPaymentMethod, totalPrice);
+    
     showNotification();
 
     // Reset form
@@ -444,4 +472,116 @@ function formatCurrency(value) {
         style: 'currency',
         currency: 'IDR'
     }).format(value);
+}
+
+// ============ HISTORY FUNCTIONS ============
+
+// Toggle history list
+function toggleHistoryList() {
+    historyList.classList.toggle('show');
+}
+
+// Load history from localStorage
+function loadHistoryFromStorage() {
+    renderHistoryList();
+}
+
+// Render history list
+function renderHistoryList() {
+    const history = JSON.parse(localStorage.getItem('bikeHistory')) || [];
+
+    if (history.length === 0) {
+        historyList.innerHTML = '<p class="history-empty">Belum ada riwayat sewa</p>';
+        return;
+    }
+
+    historyList.innerHTML = '';
+    history.forEach((item, index) => {
+        const date = new Date(item.timestamp);
+        const dateStr = date.toLocaleDateString('id-ID', {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+        });
+        const timeStr = date.toLocaleTimeString('id-ID', {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+
+        const historyItem = document.createElement('div');
+        historyItem.className = 'history-item';
+        historyItem.innerHTML = `
+            <div class="history-item-name">${item.bikeName}</div>
+            <div class="history-item-date">${dateStr} - ${timeStr}</div>
+            <div class="history-item-price">Rp ${item.totalPrice.toLocaleString('id-ID')}</div>
+        `;
+
+        historyItem.addEventListener('click', () => showHistoryDetail(item));
+        historyList.appendChild(historyItem);
+    });
+}
+
+// Show history detail
+function showHistoryDetail(item) {
+    document.getElementById('historyDetailImage').src = item.bikeImage;
+    document.getElementById('historyDetailName').textContent = item.bikeName;
+    document.getElementById('historyDetailBrand').textContent = item.bikeBrand;
+    document.getElementById('historyDuration').textContent = `${item.duration} jam`;
+    document.getElementById('historyPayment').textContent = paymentLabels[item.paymentMethod] || item.paymentMethod;
+    document.getElementById('historyOutlet').textContent = item.outlet;
+    document.getElementById('historyCustomer').textContent = item.customerName;
+    document.getElementById('historyTotalPrice').textContent = `Rp ${item.totalPrice.toLocaleString('id-ID')}`;
+
+    const startDate = new Date(item.timestamp);
+    const endDate = new Date(startDate.getTime() + item.duration * 60 * 60 * 1000);
+
+    const dateStr = startDate.toLocaleDateString('id-ID', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+    });
+    const startTime = startDate.toLocaleTimeString('id-ID', {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    const endTime = endDate.toLocaleTimeString('id-ID', {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+
+    document.getElementById('historyTimestamp').textContent = `${dateStr}, ${startTime} - ${endTime}`;
+
+    historyDetailModal.classList.add('active');
+}
+
+// Close history detail modal
+function closeHistoryDetail() {
+    historyDetailModal.classList.remove('active');
+}
+
+// Save rental to history
+function saveToHistory(bike, duration, outlet, customerName, paymentMethod, totalPrice) {
+    const historyData = {
+        bikeId: bike.id,
+        bikeName: bike.name,
+        bikeBrand: bike.brand,
+        bikeImage: bike.image,
+        duration: duration,
+        outlet: outlet,
+        customerName: customerName,
+        paymentMethod: paymentMethod,
+        totalPrice: totalPrice,
+        timestamp: new Date().toISOString()
+    };
+
+    const history = JSON.parse(localStorage.getItem('bikeHistory')) || [];
+    history.unshift(historyData);
+
+    // Keep only last 50 records
+    if (history.length > 50) {
+        history.pop();
+    }
+
+    localStorage.setItem('bikeHistory', JSON.stringify(history));
+    renderHistoryList();
 }
