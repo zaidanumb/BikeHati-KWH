@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Plan - BikeHati</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2ecc71;
+            --primary-dark: #27ae60;
+            --light-gray: #f5f5f5;
+            --border-color: #e0e0e0;
+            --text-dark: #333;
+            --text-light: #666;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* ============ NAVBAR ============ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            padding: 16px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+
+        .logo i {
+            font-size: 28px;
+        }
+
+        .nav-title {
+            font-size: 18px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .back-btn {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+        }
+
+        /* ============ MAIN CONTENT ============ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 50px 50px 50px;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e9 100%);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .page-header h1 {
+            color: var(--primary-green);
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        .page-header p {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        /* ============ SECTION ============ */
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .section h2 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2 i {
+            font-size: 28px;
+        }
+
+        .section h3 {
+            color: var(--text-dark);
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .section p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section li {
+            color: var(--text-light);
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .section li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-green);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* ============ CARDS ============ */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 32px;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* ============ TABLE ============ */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-light);
+        }
+
+        tr:hover {
+            background-color: #fafafa;
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+            text-align: center;
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .footer p {
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .footer-credit {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 20px;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .container {
+                padding: 80px 20px 30px 20px;
+            }
+
+            .page-header {
+                padding: 25px;
+            }
+
+            .page-header h1 {
+                font-size: 24px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-bicycle"></i>
+                <span>BikeHati</span>
+            </a>
+            <span class="nav-title">Business Plan</span>
+            <div class="nav-right">
+                <a href="../index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Kembali
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1><i class="fas fa-file-alt"></i> Business Plan - BikeHati</h1>
+            <p>Rencana bisnis menyeluruh untuk platform sewa sepeda modern dengan jangkauan luas dan layanan berkualitas.</p>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="section">
+            <h2><i class="fas fa-star"></i> Ringkasan Eksekutif</h2>
+            <p>BikeHati adalah platform sewa sepeda yang menggabungkan teknologi terkini dengan pelayanan terbaik untuk menyediakan solusi transportasi ramah lingkungan di kota-kota besar. Kami berkomitmen untuk memberikan pengalaman berkendara yang aman, nyaman, dan terjangkau kepada semua lapisan masyarakat.</p>
+            <h3>Visi dan Misi:</h3>
+            <ul>
+                <li><strong>Visi:</strong> Menjadi platform sewa sepeda terpercaya dan terdepan di Indonesia</li>
+                <li><strong>Misi:</strong> Menyediakan akses mudah terhadap transportasi ramah lingkungan dengan harga terjangkau</li>
+            </ul>
+        </div>
+
+        <!-- Target Market -->
+        <div class="section">
+            <h2><i class="fas fa-bullseye"></i> Pasar Target</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Mahasiswa</h3>
+                    <p>Mahasiswa mencari transportasi ekonomis dan ramah lingkungan untuk mobilitas di kampus dan kota.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Profesional Muda</h3>
+                    <p>Pekerja kantoran yang mencari alternatif transportasi sehat untuk perjalanan singkat ke kantor.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-family"></i>
+                    <h3>Keluarga</h3>
+                    <p>Keluarga yang ingin menghabiskan waktu bersama dengan aktivitas outdoor yang menyehatkan.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-backpack"></i>
+                    <h3>Wisatawan</h3>
+                    <p>Turis yang ingin menjelajahi kota dengan cara yang lebih dekat dan personal dengan komunitas lokal.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products & Services -->
+        <div class="section">
+            <h2><i class="fas fa-bicycle"></i> Produk dan Layanan</h2>
+            <h3>Kategori Sepeda:</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipe Sepeda</th>
+                            <th>Deskripsi</th>
+                            <th>Harga per Jam</th>
+                            <th>Target Pengguna</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>BMX</strong></td>
+                            <td>Sepeda untuk trik dan performa tinggi</td>
+                            <td>Rp 50.000 - 60.000</td>
+                            <td>Pemuda, atlet, penggemar trik</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sepeda Gunung</strong></td>
+                            <td>Mountain bike untuk petualangan alam</td>
+                            <td>Rp 75.000 - 85.000</td>
+                            <td>Petualang, pencinta alam, traveler</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sepeda Lipat</strong></td>
+                            <td>Sepeda compact untuk mobilitas urban</td>
+                            <td>Rp 40.000 - 48.000</td>
+                            <td>Commuter, urban explorer, transportasi publik</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sepeda Listrik</strong></td>
+                            <td>E-bike dengan motor untuk perjalanan mudah</td>
+                            <td>Rp 100.000 - 120.000</td>
+                            <td>Profesional, perjalanan jarak menengah</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="margin-top: 30px;">Layanan Tambahan:</h3>
+            <ul>
+                <li>Sistem reservasi online yang mudah dan responsif</li>
+                <li>Multiple metode pembayaran (QRIS, GoPay, DANA, OVO, Tunai)</li>
+                <li>Riwayat sewa dan tracking kepuasan pelanggan</li>
+                <li>Program loyalitas dan diskon untuk pelanggan setia</li>
+                <li>Customer support 24/7 melalui berbagai channel</li>
+            </ul>
+        </div>
+
+        <!-- Revenue Model -->
+        <div class="section">
+            <h2><i class="fas fa-dollar-sign"></i> Model Pendapatan</h2>
+            <h3>Sumber Pendapatan Utama:</h3>
+            <ul>
+                <li><strong>Rental per Jam:</strong> Penyewaan sepeda dengan tarif per jam yang kompetitif</li>
+                <li><strong>Paket Bulanan:</strong> Langganan berlangganan untuk pengguna reguler</li>
+                <li><strong>Kemitraan Korporat:</strong> Program khusus untuk perusahaan dan institusi</li>
+                <li><strong>Iklan dan Sponsorship:</strong> Ruang iklan di aplikasi dan lokasi outlet</li>
+                <li><strong>Layanan Premium:</strong> Fitur tambahan seperti tracking GPS dan asuransi</li>
+            </ul>
+        </div>
+
+        <!-- Marketing Strategy -->
+        <div class="section">
+            <h2><i class="fas fa-megaphone"></i> Strategi Pemasaran</h2>
+            <h3>Channel Pemasaran:</h3>
+            <ul>
+                <li><strong>Digital Marketing:</strong> SEO, SEM, social media (Instagram, TikTok, Facebook)</li>
+                <li><strong>Influencer Partnerships:</strong> Kolaborasi dengan health dan lifestyle influencers</li>
+                <li><strong>Event Sponsorship:</strong> Sponsorship acara olahraga dan lingkungan</li>
+                <li><strong>Community Building:</strong> Komunitas pengguna dan cycling clubs</li>
+                <li><strong>PR dan Media:</strong> Press release dan media partnerships</li>
+                <li><strong>Street Marketing:</strong> Promosi langsung di lokasi strategis</li>
+            </ul>
+
+            <h3 style="margin-top: 20px;">Key Marketing Message:</h3>
+            <p>"Bersepeda Lebih Mudah - Transportasi Ramah Lingkungan untuk Hidup yang Lebih Sehat dan Berkelanjutan"</p>
+        </div>
+
+        <!-- Operations -->
+        <div class="section">
+            <h2><i class="fas fa-cogs"></i> Operasional</h2>
+            <h3>Outlets dan Lokasi:</h3>
+            <p>Kami menargetkan kehadiran di lokasi-lokasi strategis di 4 area utama:</p>
+            <ul>
+                <li><strong>Jakarta:</strong> Kelapa Gading, Menteng, Tebet, Cikini, Kramat Jati, Gambir, Blok M, Manggarai, Senayan, Kemang, Penjaringan</li>
+                <li><strong>Bogor:</strong> Bogor Pusat, Puncak, Cisarua, Sukaraja</li>
+                <li><strong>Bekasi:</strong> Bekasi Pusat</li>
+            </ul>
+
+            <h3 style="margin-top: 20px;">Manajemen Aset:</h3>
+            <ul>
+                <li>Total 1000+ sepeda dari berbagai kategori</li>
+                <li>Regular maintenance dan quality control</li>
+                <li>Sistem tracking dan anti-theft untuk setiap unit</li>
+                <li>Replacement sepeda rusak dan maintenance preventif</li>
+            </ul>
+        </div>
+
+        <!-- Financial Projection -->
+        <div class="section">
+            <h2><i class="fas fa-chart-line"></i> Proyeksi Keuangan</h2>
+            <h3>Target Pertumbuhan (3 Tahun):</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metrik</th>
+                            <th>Tahun 1</th>
+                            <th>Tahun 2</th>
+                            <th>Tahun 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Pengguna Aktif Bulanan</strong></td>
+                            <td>5.000</td>
+                            <td>15.000</td>
+                            <td>35.000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rata-rata Sewa per Hari</strong></td>
+                            <td>150</td>
+                            <td>400</td>
+                            <td>900</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Revenue Bulanan</strong></td>
+                            <td>Rp 100 Juta</td>
+                            <td>Rp 280 Juta</td>
+                            <td>Rp 650 Juta</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Break Even</strong></td>
+                            <td>Bulan 12+</td>
+                            <td>Tercapai</td>
+                            <td>Profit 40%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Competitive Advantage -->
+        <div class="section">
+            <h2><i class="fas fa-trophy"></i> Keunggulan Kompetitif</h2>
+            <ul>
+                <li><strong>Variasi Produk:</strong> 4 kategori sepeda untuk berbagai kebutuhan pengguna</li>
+                <li><strong>Harga Kompetitif:</strong> Tarif yang lebih terjangkau dari kompetitor</li>
+                <li><strong>Teknologi:</strong> Platform digital yang user-friendly dan responsif</li>
+                <li><strong>Outlet Luas:</strong> Jangkauan di 50+ outlet di berbagai kota</li>
+                <li><strong>Kualitas Layanan:</strong> Customer support 24/7 dan maintenance berkala</li>
+                <li><strong>Sustainability:</strong> Komitmen terhadap lingkungan yang konsisten</li>
+            </ul>
+        </div>
+
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2><i class="fas fa-exclamation-triangle"></i> Analisis Risiko dan Mitigasi</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Risiko</th>
+                            <th>Dampak</th>
+                            <th>Strategi Mitigasi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Kerusakan Sepeda</strong></td>
+                            <td>Tinggi</td>
+                            <td>Asuransi, maintenance rutin, deposit pengguna</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kompetisi Pasar</strong></td>
+                            <td>Sedang</td>
+                            <td>Inovasi produk, layanan superior, loyalitas pelanggan</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cuaca Ekstrem</strong></td>
+                            <td>Sedang</td>
+                            <td>Diversifikasi lokasi, indoor options, emergency services</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Regulasi Pemerintah</strong></td>
+                            <td>Sedang</td>
+                            <td>Compliance penuh, kerjasama dengan pemerintah, lobbying</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fluktuasi Permintaan</strong></td>
+                            <td>Rendah</td>
+                            <td>Dynamic pricing, seasonal promotions, corporate packages</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Implementation Timeline -->
+        <div class="section">
+            <h2><i class="fas fa-calendar-alt"></i> Timeline Implementasi</h2>
+            <ul>
+                <li><strong>Bulan 1-2:</strong> Setup operasional, pembelian aset, training staff</li>
+                <li><strong>Bulan 3:</strong> Soft launch di 3 outlet strategis</li>
+                <li><strong>Bulan 4-6:</strong> Grand launch, intensif marketing, ekspansi ke 15 outlet</li>
+                <li><strong>Bulan 7-12:</strong> Optimasi operasional, peningkatan user base, expansion ke lokasi baru</li>
+                <li><strong>Tahun 2:</strong> Ekspansi ke kota-kota lain, pengembangan fitur aplikasi</li>
+                <li><strong>Tahun 3:</strong> Integrasi dengan transportasi publik, go public planning</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>BikeHati - Platform Sewa Sepeda Terpercaya</strong></p>
+            <p>Berkomitmen untuk transportasi ramah lingkungan dan gaya hidup sehat</p>
+            <div class="footer-credit">
+                <p>© 2026 BikeHati. Semua hak dilindungi.</p>
+                <p>Project by: Zaidan Arrasyid Suwondo (AF-10)</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
