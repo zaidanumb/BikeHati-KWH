@@ -47,3 +47,23 @@ document.querySelectorAll('.tentang-card, .fitur-item, .stat-item').forEach(item
     item.style.transition = 'all 0.6s ease';
     observer.observe(item);
 });
+
+// BisnisPedia Modal Functionality
+const bisnisPediaBtn = document.getElementById('bisnisPediaBtn');
+const bisnisPediaModal = document.getElementById('bisnisPediaModal');
+const closeBisnisPediaModal = document.getElementById('closeBisnisPediaModal');
+
+bisnisPediaBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    bisnisPediaModal.classList.add('show');
+});
+
+closeBisnisPediaModal.addEventListener('click', () => {
+    bisnisPediaModal.classList.remove('show');
+});
+
+bisnisPediaModal.addEventListener('click', (e) => {
+    if (e.target === bisnisPediaModal) {
+        bisnisPediaModal.classList.remove('show');
+    }
+});
