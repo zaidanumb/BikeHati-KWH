@@ -121,10 +121,10 @@ html {
 
 .bisnispedia-modal-content {
     background-color: white;
-    padding: 40px;
+    padding: 30px 40px;
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
+    max-width: 550px;
     width: 90%;
     position: relative;
     animation: slideUp 0.3s ease;
@@ -148,19 +148,55 @@ html {
 
 .bisnispedia-modal-content h2 {
     color: var(--primary-green);
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     font-size: 24px;
 }
 
 .bisnispedia-modal-content p {
     color: var(--text-light);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-.bisnispedia-tasks {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.tugas-mandiri-section {
+    width: 100%;
+}
+
+.tugas-mandiri-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Custom scrollbar for tugas-mandiri-grid */
+.tugas-mandiri-grid::-webkit-scrollbar {
+    width: 6px;
+}
+.tugas-mandiri-grid::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+.tugas-mandiri-grid::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 4px;
+}
+.tugas-mandiri-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+.modal-divider {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 20px 0;
+}
+
+.bisnispedia-tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
 }
 
 .task-btn {
@@ -182,11 +218,38 @@ html {
     background-color: var(--primary-green);
     color: white;
     border-color: var(--primary-dark);
-    transform: translateX(5px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.15);
+}
+
+.task-btn.compact {
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    gap: 8px;
+    border-radius: 6px;
 }
 
 .task-btn i {
     font-size: 18px;
+}
+
+@media (max-width: 580px) {
+    .bisnispedia-modal-content {
+        padding: 25px 20px;
+    }
+    .tugas-mandiri-grid {
+        grid-template-columns: 1fr;
+        max-height: 200px;
+    }
+    .bisnispedia-tasks-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .task-btn {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
 }
 
 @keyframes fadeIn {
